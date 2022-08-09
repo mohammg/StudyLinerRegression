@@ -40,20 +40,7 @@ def best_fit(xs,ys):
     
     b=np.mean(ys)-a*np.mean(xs)
     return a,b
-def best_fit2(xs ,ys):
-    alphs=[]
-    
-    cols=xs.shape[1]
-    b=np.mean(ys)
-    for c in np.arange(cols):
-        t=df.iloc[:,c]
-        a=0
-        if ((t-np.mean(t))**2).sum()!=0:
-            a=((t-np.mean(t))*(ys-np.mean(ys))).sum()/((t-np.mean(t))**2).sum()
-        alphs.append(a)
-        b-=(a*np.mean(t))
-   
-    return alphs,b
+
 yy=df['y']
 xx=df[['One','X']]
 a,b=best_fit(X, y)
